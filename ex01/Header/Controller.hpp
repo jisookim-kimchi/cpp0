@@ -15,7 +15,7 @@ private:
     PhoneBook _phoneBook;
     void handleAdd();
     void handleSearch();
-    void handleExit();
+    //void handleExit();
 };
 
 #endif

@@ -17,7 +17,11 @@ void Controller::run()
     while (1)
     {
         std::string command = View::getInput("Prompt: ");
-        if (command == "ADD")
+        if (command == "EXIT" || std::cin.eof())
+        {
+            break;
+        }
+        else if (command == "ADD")
         {
             handleAdd();
         }
@@ -25,13 +29,9 @@ void Controller::run()
         {
             handleSearch();
         }
-        else if (command == "EXIT")
-        {
-            handleExit();
-        }
         else
         {
-            View::displayError("Invalid command");
+            View::displayError("Invalid Prompt");
         }
     }
 }
@@ -81,7 +81,7 @@ void Controller::handleSearch()
     }
 }
 
-void Controller::handleExit()
-{
-
-}
+// void Controller::handleExit()
+// {
+//     exit(0);
+// }
