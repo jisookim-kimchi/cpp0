@@ -6,12 +6,11 @@ public:
     PhoneBook();
     ~PhoneBook();
     void addContact(const Contact &contact);
-    void displayPhoneBook() const;
-    void searchContact(int index) const;
+    const Contact &getContact(int index) const;
+    int getSize() const;
 
 private:
     Contact _contacts[8];
-    bool _isfull;
-    int _index;
-    int _count;
+    int _oldest_index;
+    int _size;
 };

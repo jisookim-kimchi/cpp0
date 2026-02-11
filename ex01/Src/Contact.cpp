@@ -2,76 +2,50 @@
 #include <iostream>
 
 Contact::Contact()
-    : _firstName(""), _lastName(""), _nickname(""), _phoneNumber(""), _darkSecret("")
+    : _firstName(""),
+      _lastName(""),
+      _nickname(""),
+      _phoneNumber(""),
+      _darkSecret("")
 {
-  std::cout << "Contact initialized" << std::endl;
-}
-
-Contact::Contact(const Contact &other)
-{
-  std::cout << "Contact copied" << std::endl;
-  _firstName = other._firstName;
-  _lastName = other._lastName;
-  _nickname = other._nickname;
-  _phoneNumber = other._phoneNumber;
-  _darkSecret = other._darkSecret;
+  std::cout << "Contact Init" << std::endl;
 }
 
 Contact::~Contact()
 {
-  std::cout << "Contact destroyed" << std::endl;
+  std::cout << "Contact Destroy" << std::endl;
 }
 
-void Contact::setFirstName(const std::string &firstName)
+void Contact::set_info(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
 {
-  this->_firstName = firstName;
+  _firstName = first;
+  _lastName = last;
+  _nickname = nick;
+  _phoneNumber = phone;
+  _darkSecret = secret;
 }
 
-void Contact::setLastName(const std::string &lastName)
-{
-  this->_lastName = lastName;
-}
-
-void Contact::setNickname(const std::string &nickname)
-{
-  this->_nickname = nickname;
-}
-
-void Contact::setPhoneNumber(const std::string &phoneNumber)
-{
-  this->_phoneNumber = phoneNumber;
-}
-
-void Contact::setDarkSecret(const std::string &darkSecret)
-{
-  this->_darkSecret = darkSecret;
-}
-
-std::string Contact::getFirstName() const
+const std::string &Contact::get_firstName() const
 {
   return _firstName;
 }
 
-std::string Contact::getLastName() const
+const std::string &Contact::get_lastName() const
 {
   return _lastName;
 }
 
-std::string Contact::getNickname() const
+const std::string &Contact::get_nickname() const
 {
   return _nickname;
 }
 
-std::string Contact::getPhoneNumber() const
+const std::string &Contact::get_phoneNumber() const
 {
   return _phoneNumber;
 }
 
-void Contact::displayContactInfo() const
+const std::string &Contact::get_darkSecret() const
 {
-  std::cout << "First Name: " << _firstName << std::endl;
-  std::cout << "Last Name: " << _lastName << std::endl;
-  std::cout << "Nickname: " << _nickname << std::endl;
-  std::cout << "Phone Number: " << _phoneNumber << std::endl;
-  std::cout << "Dark Secret: " << _darkSecret << std::endl;
+  return _darkSecret;
 }
