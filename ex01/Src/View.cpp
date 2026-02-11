@@ -7,7 +7,7 @@ void View::displayError(const std::string& message)
     std::cout << message << std::endl;
 }
 
-std::string View::getInput(const std::string& prompt)
+std::string View::getprompt(const std::string& prompt)
 {   
     std::string input;
     std::cout << prompt;
@@ -18,12 +18,13 @@ std::string View::getInput(const std::string& prompt)
     return (input);
 }
 
-void View::displaySummaryTable(const PhoneBook& book)
+void View::displaySummary(const PhoneBook& book)
 {
     std::cout << "|" << std::setw(10) << "index"
               << "|" << std::setw(10) << "first name"
               << "|" << std::setw(10) << "last name"
               << "|" << std::setw(10) << "nickname" << "|" << std::endl;
+
     for (int i = 0; i < book.getSize(); i++)
     {
         const Contact& c = book.getContact(i);
@@ -34,7 +35,7 @@ void View::displaySummaryTable(const PhoneBook& book)
     }
 }
 
-void View::displayFullDetails(const Contact& contact)
+void View::displayContactDetails(const Contact& contact)
 {   
     std::cout << "First name: " << contact.getFirstName() << std::endl;
     std::cout << "Last name: " << contact.getLastName() << std::endl;

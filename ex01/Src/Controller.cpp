@@ -16,7 +16,7 @@ void Controller::run()
 {
     while (1)
     {
-        std::string command = View::getInput("Prompt: ");
+        std::string command = View::getprompt("Prompt: ");
         if (command == "EXIT" || std::cin.eof())
         {
             break;
@@ -42,7 +42,7 @@ void Controller::handleAdd()
     std::string prompts[5] = {"First name : ", "Last name : ", "Nickname : ", "Phone number : ", "Darkest secret : "};
     for (int i = 0; i < 5; i++)
     {
-        fileds[i] = View::getInput(prompts[i]);
+        fileds[i] = View::getprompt(prompts[i]);
         if (fileds[i].empty())
         {
             View::displayError("Invalid input");
@@ -63,7 +63,7 @@ void Controller::handleSearch()
         View::displayError("PhoneBook is empty");
         return;
     }
-    std::string input = View::getInput("Search index: ");
+    std::string input = View::getprompt("Search index: ");
     if (input.empty())
     {
         View::displayError("Invalid index");
@@ -73,7 +73,7 @@ void Controller::handleSearch()
     if (index >= 0 && index < size)
     {
         const Contact& contact = _phoneBook.getContact(index);
-        View::displayFullDetails(contact);
+        View::displayContactDetails(contact);
     }
     else
     {
