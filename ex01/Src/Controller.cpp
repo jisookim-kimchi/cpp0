@@ -1,5 +1,6 @@
 #include "../Header/Controller.hpp"
 #include <iostream>
+#include "../Header/View.hpp"
 
 Controller::Controller()
 {
@@ -13,10 +14,29 @@ Controller::~Controller()
 
 void Controller::run()
 {
-    
+    while (1)
+    {
+        std::string command = View::getInput("Prompt: ");
+        if (command == "ADD")
+        {
+            handleAdd();
+        }
+        else if (command == "SEARCH")
+        {
+            handleSearch();
+        }
+        else if (command == "EXIT")
+        {
+            handleExit();
+        }
+        else
+        {
+            View::displayError("Invalid command");
+        }
+    }
 }
 
-void Controller::handle_add()
+void Controller::handleAdd()
 {
     std::string fileds[5];
     std::string prompts[5] = {"First name : ", "Last name : ", "Nickname : ", "Phone number : ", "Darkest secret : "};
@@ -30,11 +50,12 @@ void Controller::handle_add()
         }
     }
     Contact contact;
-    contact.set_info(fileds[0], fileds[1], fileds[2], fileds[3], fileds[4]);
+    contact.setInfo(fileds[0], fileds[1], fileds[2], fileds[3], fileds[4]);
     _phoneBook.addContact(contact);
 }
 
-void Controller::handle_search()
+//todo : instead atoi what should i use???
+void Controller::handleSearch()
 {
     int size = _phoneBook.getSize();
     if (size == 0)
@@ -60,7 +81,7 @@ void Controller::handle_search()
     }
 }
 
-void Controller::handle_exit()
+void Controller::handleExit()
 {
 
 }

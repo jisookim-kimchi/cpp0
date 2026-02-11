@@ -1,5 +1,7 @@
+#ifndef CONTROLLER_HPP
+#define CONTROLLER_HPP
+
 #include "./PhoneBook.hpp" 
-#include "./View.hpp"
 
 class Controller
 {
@@ -11,8 +13,9 @@ public:
 
 private:
     PhoneBook _phoneBook;
-    void handle_add();
-    void handle_search();
-    void handle_exit();
-    View _view;
+    void handleAdd();
+    void handleSearch();
+    void handleExit();
 };
+
+#endif

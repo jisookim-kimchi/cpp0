@@ -10,12 +10,12 @@ public:
   Contact();
   ~Contact();
 
-  void set_info(std::string first, std::string last, std::string nick, std::string phone, std::string secret);
-  const std::string &get_firstName() const;
-  const std::string &get_lastName() const;
-  const std::string &get_nickname() const;
-  const std::string &get_phoneNumber() const;
-  const std::string &get_darkSecret() const;
+  void setInfo(std::string first, std::string last, std::string nick, std::string phone, std::string secret);
+  const std::string &getFirstName() const;
+  const std::string &getLastName() const;
+  const std::string &getNickname() const;
+  const std::string &getPhoneNumber() const;
+  const std::string &getDarkSecret() const;
 
 private:
   std::string _firstName;

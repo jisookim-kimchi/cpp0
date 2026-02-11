@@ -1,3 +1,6 @@
+#ifndef PHONEBOOK_HPP
+#define PHONEBOOK_HPP
+
 #include "Contact.hpp"
 
 class PhoneBook
@@ -14,3 +17,5 @@ private:
     int _oldest_index;
     int _size;
 };
+
+#endif

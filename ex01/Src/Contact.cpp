@@ -16,7 +16,7 @@ Contact::~Contact()
   std::cout << "Contact Destroy" << std::endl;
 }
 
-void Contact::set_info(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
+void Contact::setInfo(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
 {
   _firstName = first;
   _lastName = last;
@@ -25,27 +25,27 @@ void Contact::set_info(std::string first, std::string last, std::string nick, st
   _darkSecret = secret;
 }
 
-const std::string &Contact::get_firstName() const
+const std::string &Contact::getFirstName() const
 {
   return _firstName;
 }
 
-const std::string &Contact::get_lastName() const
+const std::string &Contact::getLastName() const
 {
   return _lastName;
 }
 
-const std::string &Contact::get_nickname() const
+const std::string &Contact::getNickname() const
 {
   return _nickname;
 }
 
-const std::string &Contact::get_phoneNumber() const
+const std::string &Contact::getPhoneNumber() const
 {
   return _phoneNumber;
 }
 
-const std::string &Contact::get_darkSecret() const
+const std::string &Contact::getDarkSecret() const
 {
   return _darkSecret;
 }
