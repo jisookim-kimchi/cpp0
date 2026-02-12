@@ -10,7 +10,7 @@ public:
   Contact();
   ~Contact();
 
-  void setInfo(std::string first, std::string last, std::string nick, std::string phone, std::string secret);
+  void setInfo(std::string &first, std::string &last, std::string &nick, std::string &phone, std::string &secret);
   const std::string &getFirstName() const;
   const std::string &getLastName() const;
   const std::string &getNickname() const;

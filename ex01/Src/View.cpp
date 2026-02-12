@@ -41,7 +41,7 @@ void View::displayContactDetails(const Contact& contact)
     std::cout << "Last name: " << contact.getLastName() << std::endl;
     std::cout << "Nickname: " << contact.getNickname() << std::endl;
     std::cout << "Phone number: " << contact.getPhoneNumber() << std::endl;
-    std::cout << "Darkest secret: " << contact.getDarkSecret() << std::endl;
+    //std::cout << "Darkest secret: " << contact.getDarkSecret() << std::endl;
 }
 
 std::string View::formatField(const std::string& str)

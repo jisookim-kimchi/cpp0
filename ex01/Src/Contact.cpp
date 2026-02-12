@@ -16,7 +16,7 @@ Contact::~Contact()
   std::cout << "Contact Destroy" << std::endl;
 }
 
-void Contact::setInfo(std::string first, std::string last, std::string nick, std::string phone, std::string secret)
+void Contact::setInfo(std::string &first, std::string &last, std::string &nick, std::string &phone, std::string &secret)
 {
   _firstName = first;
   _lastName = last;
