@@ -91,6 +91,10 @@ Account::Account( int initial_deposit )
     _nbDeposits = 0;
     _nbWithdrawals = 0;
     _totalAmount += initial_deposit;
+    _displayTimestamp();
+    std::cout << "index:" << _accountIndex << ";";
+    std::cout << "amount:" << _amount << ";";
+    std::cout << "created" << std::endl;
 }
 
 Account::~Account( void )
